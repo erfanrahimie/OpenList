@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon" />
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
+    <!-- Tooltip CSS -->
+    <link rel="stylesheet" href="{% static 'vendors/tooltip/balloon.min.css' %}">
+    <!-- Icon CSS-->
+    <link rel="stylesheet" href="{% static 'vendors/ionicons/css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/font-awesome/css/font-awesome.min.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Check-button CSS-->
+    <link rel="stylesheet" href="{% static 'vendors/calendar/dcalendar.picker.css' %}">
+    <!-- Calendar CSS-->
+    <link rel="stylesheet" href="{% static 'vendors/check-button/jqflipswitch.default.style.css' %}">
+    <!--Theme Styles CSS-->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" media="all" />
+    {% block extra_header %}{% endblock %}
+</head>
+<body>
+    <!-- Header_Area -->
+    {% include 'include/header.html' %}
+    <!-- End  Header_Area -->
+
+    {% block content %}{% endblock %}
+
+    <!-- Footer area -->
+    {% include 'include/footer.html' %}
+    <!-- End Footer area -->
+
+    <!-- jQuery JS -->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <!-- Materialize JS -->
+    <script src="{% static 'js/materialize.min.js' %}"></script>
+    <!-- Calendar JS -->
+    <script src="{% static 'vendors/calendar/dcalendar.picker.js' %}"></script>
+    <!-- Load JS -->
+    <script src="{% static 'vendors/infinite-scroll/jquery.jscroll.js' %}"></script>
+    <!-- Check Button js -->
+    <script src="{% static 'vendors/check-button/jquery.jqflipswitch.min.js' %}"></script>
+    <script src="{% static 'vendors/check-button/jquery.jqflipswitch.js' %}"></script>
+    <!-- Theme JS -->
+    <script src="{% static 'js/theme.js' %}"></script>
+    {% block extra_footer %}{% endblock %}
+</body>
+</html>
